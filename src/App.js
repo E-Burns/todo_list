@@ -6,8 +6,8 @@ function App() {
   const [tasks, setTasks] = useState([
     //tasks go in here
     { name: "Eat Jaffa cakes", priority: "high", isDone: false },
-    { name: "Make Herbert a website", priority: "medium", isDone: false },
-    { name: "Watch Empire Strikes Back", priority: "low", isDone: false }
+    { name: "Watch Empire Strikes Back", priority: "medium", isDone: false },
+    { name: "Watch Last Jedi", priority: "low", isDone: false }
   ]);
 
   const [newTask, setNewTask] = useState('');
@@ -18,7 +18,7 @@ function App() {
 
   const taskNodes = tasks.map((task, index) => {
     return(
-      <li key={index} className={
+      <li key={index} id='taskItem' className={
         task.isDone === true ? 'done' :
         task.priority === 'high' ? 'high' : task.priority === 'medium' ? 'medium' : 'low'}>
         <span>{task.name}</span>
@@ -87,11 +87,11 @@ function App() {
         <input type='radio' id='priorityLow' name="priority" value='low' onChange={handleTaskPriority} />
           <label htmlFor='priorityLow'>Low</label>
 
-        <input type='submit' value='Save Task'/>
+        <input id='save-task' type='submit' value='Save Task'/>
       </form>
 
 {/* editing list */}
-      <form>
+      <form id='removeForm'>
         <button onClick={handleRemoveAll}>Remove all</button>
         <button onClick={handleRemoveDone}>Remove done</button>
       </form>

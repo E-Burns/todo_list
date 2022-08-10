@@ -5,7 +5,7 @@ body {
 .App {
   width: 60%;
   margin: 0 auto;
-  font-family: 'Lato', sans-serif;
+  font-family: Verdana, 'Lato', sans-serif;
 }
 
 
@@ -16,10 +16,11 @@ ul {
 }
 
 li {
-  margin: 20px 0;
+  margin: 15px 0;
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  border-radius: 20px;
 }
 
 li span {
@@ -59,5 +60,23 @@ button, input[type="submit"]{
   cursor: pointer;
   border: 1px solid #2F52E0;
   margin: 8px;
+  border-radius: 10px;
 }
 
+ul > li > button:hover, #save-task:hover{
+  color: #2f52e0;
+  background-color: rgba(255, 255, 255, 0.812);
+  transition: 0.2s;
+}
+
+form > button:hover {
+  background: #ff715b;
+  border: 1px solid #4C2E05;
+  color: black;
+  transition: 0.2s;
+}
+
+#new-task {
+  border-radius: 10px;
+  border: 1.5px solid #4C2E05;
+}
