@@ -38,7 +38,7 @@ function App() {
 
   const saveNewTask = (event) => {
     event.preventDefault();
-    if(newTask.length > 0 && (newTaskPriority == 'high' || newTaskPriority == 'medium' || newTaskPriority == 'low')){
+    if(newTask.length > 0 && (newTaskPriority === 'high' || newTaskPriority === 'medium' || newTaskPriority === 'low')){
       const copyTasks = [...tasks];
       copyTasks.push({name: newTask, priority: newTaskPriority, isDone: false});
       setTasks(copyTasks);
@@ -49,11 +49,21 @@ function App() {
   const changeIsDone = (index) => {
     const copyTasks = [...tasks];
     copyTasks[index].isDone = true;
+    copyTasks[index].priority = 'none';
     setTasks(copyTasks);
   }
 
 
   //editing the list
+  const handleOrder = (event) => {
+    event.preventDefault();
+    const taskDone = tasks.filter(task => task.isDone === true);
+    const priorityHigh = tasks.filter(task => task.priority === 'high');
+    const priorityMed = tasks.filter(task => task.priority === 'medium');
+    const priorityLow = tasks.filter(task => task.priority === 'low');
+    const orderedList = taskDone.concat(priorityHigh, priorityMed, priorityLow);
+    setTasks(orderedList);
+  }
 
   const handleRemoveAll = (event) => {
     event.preventDefault();
@@ -92,8 +102,9 @@ function App() {
 
 {/* editing list */}
       <form id='removeForm'>
-        <button onClick={handleRemoveAll}>Remove all</button>
-        <button onClick={handleRemoveDone}>Remove done</button>
+        <button onClick={handleOrder} className='reorder'>Order tasks</button>
+        <button onClick={handleRemoveDone} className='remove'>Remove done</button>
+        <button onClick={handleRemoveAll} className='remove'>Remove all</button>
       </form>
 
 {/* list */}

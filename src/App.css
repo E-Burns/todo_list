@@ -21,6 +21,7 @@ li {
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
+  border: 2px solid #4C2E05;
 }
 
 li span {
@@ -28,22 +29,18 @@ li span {
 }
 
 li.low {
-  border: 2px solid #4C2E05;
   background-color: #BCED09;
 }
 
 li.medium {
-  border: 2px solid #4C2E05;
   background-color: #F9CB40;
 }
 
 li.high {
-  border: 2px solid #4C2E05;
   background-color: #FF715B;
 }
 
 li.done {
-  border: 2px solid #4C2E05;
   background-color: #f6f6ff9f;
 }
 
@@ -69,8 +66,15 @@ ul > li > button:hover, #save-task:hover{
   transition: 0.2s;
 }
 
-form > button:hover {
+form > button.remove:hover {
   background: #ff715b;
+  border: 1px solid #4C2E05;
+  color: black;
+  transition: 0.2s;
+}
+
+form > button.reorder:hover {
+  background: #BCED09ca;
   border: 1px solid #4C2E05;
   color: black;
   transition: 0.2s;
