@@ -31,15 +31,12 @@ li span {
 li.low {
   background-color: #BCED09;
 }
-
 li.medium {
   background-color: #F9CB40;
 }
-
 li.high {
   background-color: #FF715B;
 }
-
 li.done {
   background-color: #f6f6ff9f;
 }
