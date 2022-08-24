@@ -2,6 +2,10 @@ body {
   background-color: #bdbfc6;
 }
 
+h1 {
+  text-align: center;
+}
+
 .App {
   width: 60%;
   margin: 0 auto;
@@ -19,7 +23,6 @@ li {
   margin: 15px 0;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
   border-radius: 20px;
   border: 2px solid #4C2E05;
 }
@@ -80,4 +83,91 @@ form > button.reorder:hover {
 #new-task {
   border-radius: 10px;
   border: 1.5px solid #4C2E05;
+}
+
+
+#prio-div {
+  grid-area: prio-div;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
+form > input[type="text"]{
+  grid-area: task-input;
+}
+
+form > input[type="submit"]{
+  grid-area: submit;
+  max-width: 90px;
+}
+
+
+#order{
+  grid-area: order;
+}
+
+#rm-done{
+  grid-area: rm-done;
+}
+
+#rm-all{
+  grid-area: rm-all;
+}
+
+/* for computers */
+@media (min-width: 760px) {
+  li {
+    justify-content: space-between;
+  }
+
+  form.submit-form{
+    display: grid;
+    grid-template-areas:
+    'prio-div prio-div'
+    'task-input submit';
+    justify-content: space-between;
+  }
+
+  form > input[type="text"]{
+    width: 196%;
+  }
+}
+
+/* for phones */
+@media (max-width: 759px) {
+  body{
+    text-size-adjust: auto;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+  }
+
+  ul > li > button {
+    min-width: 75%;
+  }
+
+
+  form.submit-form{
+    display: grid;
+    grid-template-areas: 
+    'prio-div prio-div'
+    'task-input submit';
+    justify-content: space-evenly;
+  }
+
+  form > input[type="text"]{
+    width: 80%;
+  }
+
+
+  form.edit-form{
+    display: grid;
+    grid-template-areas: 
+    'order order'
+    'rm-done rm-all';
+  }
 }

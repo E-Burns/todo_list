@@ -85,26 +85,35 @@ function App() {
       <hr></hr>
 
 {/* making list */}
-      <form onSubmit={saveNewTask}>
-        <input id='new-task' type='text' value={newTask} onChange={handleTaskInput} />
-        
-        <input type='radio' id='priorityHigh' name="priority" value='high' onChange={handleTaskPriority} />
-          <label htmlFor='priorityHigh'>High</label>
+      <form className='submit-form' onSubmit={saveNewTask}>
 
-        <input type='radio' id='priorityMed' name="priority" value='medium' onChange={handleTaskPriority} />
-          <label htmlFor='priorityMed'>Medium</label>
+        <div id='prio-div'>
+          <section>
+            <input type='radio' id='priorityHigh' name="priority" value='high' onChange={handleTaskPriority} />
+              <label htmlFor='priorityHigh'>High</label>
+          </section>
 
-        <input type='radio' id='priorityLow' name="priority" value='low' onChange={handleTaskPriority} />
-          <label htmlFor='priorityLow'>Low</label>
+          <section>
+            <input type='radio' id='priorityMed' name="priority" value='medium' onChange={handleTaskPriority} />
+              <label htmlFor='priorityMed'>Medium</label>
+          </section>
+
+          <section>
+            <input type='radio' id='priorityLow' name="priority" value='low' onChange={handleTaskPriority} />
+              <label htmlFor='priorityLow'>Low</label>
+          </section>
+        </div>
+
+        <input id='new-task' type='text' value={newTask} onChange={handleTaskInput} placeholder='Enter task' />
 
         <input id='save-task' type='submit' value='Save Task'/>
       </form>
 
 {/* editing list */}
-      <form id='removeForm'>
-        <button onClick={handleOrder} className='reorder'>Order tasks</button>
-        <button onClick={handleRemoveDone} className='remove'>Remove done</button>
-        <button onClick={handleRemoveAll} className='remove'>Remove all</button>
+      <form className='edit-form'>
+        <button onClick={handleOrder} className='reorder' id='order'>Order tasks</button>
+        <button onClick={handleRemoveDone} className='remove' id='rm-done'>Remove done</button>
+        <button onClick={handleRemoveAll} className='remove' id='rm-all'>Remove all</button>
       </form>
 
 {/* list */}
