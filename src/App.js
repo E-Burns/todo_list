@@ -87,7 +87,7 @@ function App() {
 {/* making list */}
       <form className='submit-form' onSubmit={saveNewTask}>
 
-        <div id='prio-div'>
+        <div id='prio-div'> 
           <section>
             <input type='radio' id='priorityHigh' name="priority" value='high' onChange={handleTaskPriority} />
               <label htmlFor='priorityHigh'>High</label>
