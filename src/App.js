@@ -5,9 +5,6 @@ function App() {
 
   const [tasks, setTasks] = useState([
     //tasks go in here
-    { name: "Eat Jaffa cakes", priority: "high", isDone: false },
-    { name: "Watch Empire Strikes Back", priority: "medium", isDone: false },
-    { name: "Watch Last Jedi", priority: "low", isDone: false }
   ]);
 
   const [newTask, setNewTask] = useState('');
@@ -61,7 +58,7 @@ function App() {
     const priorityHigh = tasks.filter(task => task.priority === 'high');
     const priorityMed = tasks.filter(task => task.priority === 'medium');
     const priorityLow = tasks.filter(task => task.priority === 'low');
-    const orderedList = taskDone.concat(priorityHigh, priorityMed, priorityLow);
+    const orderedList = priorityHigh.concat(priorityMed, priorityLow, taskDone);
     setTasks(orderedList);
   }
 
