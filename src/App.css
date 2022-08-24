@@ -121,16 +121,15 @@ form > input[type="submit"]{
     justify-content: space-between;
   }
 
-  form.submit-form{
-    display: grid;
-    grid-template-areas:
-    'prio-div prio-div'
-    'task-input submit';
-    justify-content: space-between;
+  form > input[type="text"]{
+    width: 64%;
+    margin-left: 6%;
   }
 
-  form > input[type="text"]{
-    width: 196%;
+  form.edit-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
