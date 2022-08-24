@@ -15,3 +15,13 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('dom loaded');
+  // const root = document.querySelector('#root');
+
+  // const displayApp = document.createElement('div');
+  // displayApp.textContent = App;
+  // root.appendChild(displayApp);
+});
